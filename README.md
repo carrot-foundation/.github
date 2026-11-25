@@ -27,6 +27,10 @@ jobs:
       lorien-read-token: ${{ secrets.LORIEN_READ_TOKEN }}
 ```
 
+If the caller’s root `package.json` declares npm via `packageManager` or `devEngines.packageManager`, keep a supported lockfile at the root for Node setup: `package-lock.json`, `npm-shrinkwrap.json`, or `yarn.lock`.
+
+The verifier follows Lorien’s `main` branch by default. To pin the verifier independently of the reusable workflow, set the calling job’s `with.lorien-ref` input to a full commit SHA from Lorien.
+
 ## Overriding a default
 
 A repository that keeps its own file of the same type, for example its own pull request template,
