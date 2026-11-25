@@ -20,6 +20,8 @@ Add this job to a workflow in the calling repository. Replace `<sha>` with the f
 ```yaml
 jobs:
   repo-agent-config:
+    permissions:
+      contents: read
     uses: carrot-foundation/.github/.github/workflows/repo-agent-config.yml@<sha>
     secrets:
       lorien-read-token: ${{ secrets.LORIEN_READ_TOKEN }}
